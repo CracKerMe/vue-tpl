@@ -74,6 +74,10 @@ module.exports = {
       type: 'confirm',
       message: 'Install vue-router?'
     },
+    sass: {
+      type: 'confirm',
+      message: 'Install sass?'
+    },
     vuex: {
       type: 'confirm',
       message: 'Install vuex?'
