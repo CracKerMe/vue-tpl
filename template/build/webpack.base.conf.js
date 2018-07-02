@@ -39,8 +39,9 @@ module.exports = {
       {{/if_eq}}
       '@': resolve('src'),
       'views': resolve('src/views'),
-      'components': resolve('src/components')
-      }
+      'components': resolve('src/components'),
+      'base': resolve('src/base')
+    }
   },
   module: {
     rules: [
