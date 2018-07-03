@@ -7,6 +7,10 @@ import App from './App'
 {{#router}}
 import router from './router'
 {{/router}}
+{{#axios}}
+import axios from 'axios'
+Object.defineProperty(Vue.protoType, '$axios', {value: axios})
+{{/axios}}
 
 {{#vuex}}  //vuex为true的时候就会写入这些
 import Vuex from 'vuex'{{#if_eq lintConfig "airbnb"}};{{/if_eq}}

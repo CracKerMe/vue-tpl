@@ -29,7 +29,8 @@
     "vue-router": "^3.0.1"{{/router}}{{#vuex}},
     "vuex": "^2.1.1"{{/vuex}}{{#sass}},
     "node-sass": "^4.9.0",
-    "sass-loader": "^7.0.3"{{/sass}}
+    "sass-loader": "^7.0.3"{{/sass}}{{axios}},
+    "axios": "0.18.0"{{/axios}}
   },
   "devDependencies": {
     {{#lint}}

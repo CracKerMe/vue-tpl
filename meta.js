@@ -78,6 +78,10 @@ module.exports = {
       type: 'confirm',
       message: 'Install sass?'
     },
+    axios: {
+      type: 'confirm',
+      message: 'Install axios?'
+    },
     vuex: {
       type: 'confirm',
       message: 'Install vuex?'
