@@ -29,9 +29,9 @@
     "vue-router": "^3.0.1"{{/router}}{{#vuex}},
     "vuex": "^2.1.1"{{/vuex}}{{#sass}},
     "node-sass": "^4.9.0",
-    "sass-loader": "^7.0.3"{{/sass}}{{axios}},
-    "axios": "0.18.0"{{/axios}}{{jsonp}},
-    "jsonp": "0.2.1"{{/jsonp}}{{betterScroll}},
+    "sass-loader": "^7.0.3"{{/sass}}{{#axios}},
+    "axios": "0.18.0"{{/axios}}{{#jsonp}},
+    "jsonp": "0.2.1"{{/jsonp}}{{#betterScroll}},
     "better-scroll": "^1.12.4"{{/betterScroll}}
   },
   "devDependencies": {
