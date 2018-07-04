@@ -80,7 +80,15 @@ module.exports = {
     },
     axios: {
       type: 'confirm',
-      message: 'Install axios?'
+      message: 'need axios?'
+    },
+    betterScroll: {
+      type: 'confirm',
+      message: 'need use betterScroll?'
+    },
+    jsonp: {
+      type: 'confirm',
+      message: 'need jsonp?'
     },
     vuex: {
       type: 'confirm',
