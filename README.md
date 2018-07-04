@@ -1,5 +1,7 @@
 ### 自定义你的 vue 模板
-####### vue custom template design for myself
+
+vue custom template design for myself
+
 出发点：本来在使用 vue init webpack XXX初始化项目的时候，总是要拿过来修改
 
 1. 配置alias
