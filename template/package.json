@@ -1,6 +1,6 @@
 {
   "name": "{{ name }}",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "{{ description }}",
   "author": "{{ author }}",
   "private": true,
@@ -19,6 +19,14 @@
     {{#if_or unit e2e}}
     "test": "{{#unit}}npm run unit{{/unit}}{{#unit}}{{#e2e}} && {{/e2e}}{{/unit}}{{#e2e}}npm run e2e{{/e2e}}",
     {{/if_or}}
+    {{#if_eq cssWithVW "vw"}} 
+    "cssnano": "^4.1.9",
+    "postcss-aspect-ratio-mini": "^1.0.1",
+    "postcss-cssnext": "^3.1.0",
+    "postcss-px-to-viewport": "^1.0.0",
+    "postcss-viewport-units": "^0.1.6",
+    "postcss-write-svg": "^3.0.1",
+    {{/if_eq}}
     {{#lint}}
     "lint": "eslint --ext .js,.vue src{{#unit}} test/unit{{/unit}}{{#e2e}} test/e2e/specs{{/e2e}}",
     {{/lint}}
@@ -32,7 +40,12 @@
     "sass-loader": "^7.0.3"{{/sass}}{{#axios}},
     "axios": "0.18.0"{{/axios}}{{#jsonp}},
     "jsonp": "0.2.1"{{/jsonp}}{{#betterScroll}},
-    "better-scroll": "^1.12.4"{{/betterScroll}}
+    "better-scroll": "^1.12.4"{{/betterScroll}}{{#if_eq cssWithVW "vw"}},
+    "cssnano-preset-advanced": "^4.0.7",
+    "postcss-import": "^11.1.0",
+    "postcss-loader": "^2.0.8",
+    "postcss-url": "^7.3.2"
+    {{/if_eq}}
   },
   "devDependencies": {
     {{#lint}}

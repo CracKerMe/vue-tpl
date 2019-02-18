@@ -69,6 +69,24 @@ module.exports = {
         }
       ]
     },
+    cssWithVW: {
+      when: 'isNotTest',
+      type: 'list',
+      message: 'use vw/vh instead rem on mobile mode',
+      choices: [
+        {
+          name: 'Yes vw is best',
+          value: 'vw',
+          short: 'vw'
+        },
+        {
+          name:
+            'no i use rem for fucking low devices',
+          value: 'no',
+          short: 'no'
+        }
+      ]
+    },
     router: {
       when: 'isNotTest',
       type: 'confirm',
