@@ -38,7 +38,7 @@
     "postcss-cssnext": "^3.1.0",
     "postcss-px-to-viewport": "^1.0.0",
     "postcss-viewport-units": "^0.1.6",
-    "postcss-write-svg": "^3.0.1",
+    "postcss-write-svg": "^3.0.1"
     {{/if_eq}}
   },
   "devDependencies": {
@@ -92,7 +92,7 @@
     "cssnano-preset-advanced": "^4.0.7",
     "postcss-import": "^11.1.0",
     "postcss-loader": "^2.0.8",
-    "postcss-url": "^7.3.2"
+    "postcss-url": "^7.3.2",
     {{/if_eq}}
     {{#e2e}}
     "babel-register": "^6.22.0",
