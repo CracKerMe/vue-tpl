@@ -21,12 +21,13 @@ vue custom template design for myself
     ├── /App.vue
     ├── /main.js 
 ```
-4. 安装vuex(可选)
-5. 安装sass(可选)
-6. 安装better-scroll(可选)
-7. 提供 scroll 和 slider 模板直接上手使用,请期待readme 的 使用说明以及更新
-8. 安装axios(可选)
-9. 安装jsonp(可选)
+4. 是否需要使用 vw 出来移动端兼容(可选)
+5. 安装vuex(可选)
+6. 安装sass(可选)
+7. 安装better-scroll(可选)
+8. 提供 scroll 和 slider 模板直接上手使用,请期待readme 的 使用说明以及更新
+9. 安装axios(可选)
+10. 安装jsonp(可选)
 
 ### How to use
 
