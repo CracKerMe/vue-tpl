@@ -4,47 +4,55 @@
       <div ref="listWrapper">
         <slot>
           <ul class="list-content">
-            <li @click="clickItem($event,item)" class="list-item" v-for="item in data" :key="item.id">{{item}}</li>
+            <li
+              @click="clickItem($event,item)"
+              class="list-item"
+              v-for="item in data"
+              :key="item">{{item}}</li>
           </ul>
         </slot>
       </div>
-      <slot name="pullup"
-            :pullUpLoad="pullUpLoad"
-            :isPullUpLoad="isPullUpLoad"
-      >
+      <slot name="pullup" :pullUpLoad="pullUpLoad" :isPullUpLoad="isPullUpLoad">
         <div class="pullup-wrapper" v-if="pullUpLoad">
           <div class="before-trigger" v-if="!isPullUpLoad">
             <span>{{pullUpTxt}}</span>
           </div>
           <div class="after-trigger" v-else>
-            // loading
+            <loading></loading>
           </div>
         </div>
       </slot>
     </div>
-    <slot name="pulldown"
-          :pullDownRefresh="pullDownRefresh"
-          :pullDownStyle="pullDownStyle"
-          :beforePullDown="beforePullDown"
-          :isPullingDown="isPullingDown"
+    <slot
+      name="pulldown"
+      :pullDownRefresh="pullDownRefresh"
+      :pullDownStyle="pullDownStyle"
+      :beforePullDown="beforePullDown"
+      :isPullingDown="isPullingDown"
+      :bubbleY="bubbleY"
     >
       <div ref="pulldown" class="pulldown-wrapper" :style="pullDownStyle" v-if="pullDownRefresh">
         <div class="before-trigger" v-if="beforePullDown">
+          <bubble :y="bubbleY"></bubble>
         </div>
         <div class="after-trigger" v-else>
           <div v-if="isPullingDown" class="loading">
-            // loading
+            <loading></loading>
           </div>
-          <div v-else><span>{{refreshTxt}}</span></div>
+          <div v-else>
+            <span>{{refreshTxt}}</span>
+          </div>
         </div>
       </div>
     </slot>
   </div>
 </template>
 
-<script>
+<script type="text/ecmascript-6">
 import BScroll from 'better-scroll'
-import { getRect } from 'base/dom/dom'
+import Loading from '../loading/loading'
+import Bubble from '../bubble/bubble'
+import { getRect } from '../dom/dom'
 
 const COMPONENT_NAME = 'scroll'
 const DIRECTION_H = 'horizontal'
@@ -125,19 +133,29 @@ export default {
       isPullingDown: false,
       isPullUpLoad: false,
       pullUpDirty: true,
-      pullDownStyle: ''
+      pullDownStyle: '',
+      bubbleY: 0
     }
   },
   computed: {
     pullUpTxt () {
-      const moreTxt = (this.pullUpLoad && this.pullUpLoad.txt && this.pullUpLoad.txt.more) || 'scrollComponent.defaultLoadTxtMore'
+      const moreTxt =
+        (this.pullUpLoad && this.pullUpLoad.txt && this.pullUpLoad.txt.more) ||
+        '刷新'
 
-      const noMoreTxt = (this.pullUpLoad && this.pullUpLoad.txt && this.pullUpLoad.txt.noMore) || 'scrollComponent.defaultLoadTxtNoMore'
+      const noMoreTxt =
+        (this.pullUpLoad &&
+          this.pullUpLoad.txt &&
+          this.pullUpLoad.txt.noMore) ||
+        '加载更多'
 
       return this.pullUpDirty ? moreTxt : noMoreTxt
     },
     refreshTxt () {
-      return (this.pullDownRefresh && this.pullDownRefresh.txt) || 'scrollComponent.defaultRefreshTxt'
+      return (
+        (this.pullDownRefresh && this.pullDownRefresh.txt) ||
+        '已更新'
+      )
     }
   },
   created () {
@@ -157,7 +175,8 @@ export default {
         return
       }
       if (this.$refs.listWrapper && (this.pullDownRefresh || this.pullUpLoad)) {
-        this.$refs.listWrapper.style.minHeight = `${getRect(this.$refs.wrapper).height + 1}px`
+        this.$refs.listWrapper.style.minHeight = `${getRect(this.$refs.wrapper)
+          .height + 1}px`
       }
 
       let options = {
@@ -178,13 +197,13 @@ export default {
       this.scroll = new BScroll(this.$refs.wrapper, options)
 
       if (this.listenScroll) {
-        this.scroll.on('scroll', (pos) => {
+        this.scroll.on('scroll', pos => {
           this.$emit('scroll', pos)
         })
       }
 
       if (this.listenScrollEnd) {
-        this.scroll.on('scrollEnd', (pos) => {
+        this.scroll.on('scrollEnd', pos => {
           this.$emit('scroll-end', pos)
         })
       }
@@ -219,6 +238,9 @@ export default {
     scrollTo () {
       this.scroll && this.scroll.scrollTo.apply(this.scroll, arguments)
     },
+    autoPullDownRefresh () {
+      this.scroll && this.scroll.autoPullDownRefresh()
+    },
     scrollToElement () {
       this.scroll && this.scroll.scrollToElement.apply(this.scroll, arguments)
     },
@@ -251,15 +273,23 @@ export default {
         this.$emit('pullingDown')
       })
 
-      this.scroll.on('scroll', (pos) => {
+      this.scroll.on('scroll', pos => {
         if (!this.pullDownRefresh) {
           return
         }
         if (this.beforePullDown) {
+          this.bubbleY = Math.max(0, pos.y + this.pullDownInitTop)
+          this.pullDownStyle = `top:${Math.min(
+            pos.y + this.pullDownInitTop,
+            10
+          )}px`
+        } else {
+          this.bubbleY = 0
         }
 
         if (this.isRebounding) {
-          this.pullDownStyle = `top:${10 - (this.pullDownRefresh.stop - pos.y)}px`
+          this.pullDownStyle = `top:${10 -
+            (this.pullDownRefresh.stop - pos.y)}px`
         }
       })
     },
@@ -270,8 +300,8 @@ export default {
       })
     },
     _reboundPullDown () {
-      const {stopTime = 600} = this.pullDownRefresh
-      return new Promise((resolve) => {
+      const { stopTime = 600 } = this.pullDownRefresh
+      return new Promise(resolve => {
         setTimeout(() => {
           this.isRebounding = true
           this.scroll.finishPullDown()
@@ -295,7 +325,10 @@ export default {
       }, this.refreshDelay)
     }
   },
-  components: {}
+  components: {
+    Loading,
+    Bubble
+  }
 }
 </script>
 
@@ -322,6 +355,7 @@ export default {
     }
   }
 }
+
 .pulldown-wrapper {
   position: absolute;
   width: 100%;
