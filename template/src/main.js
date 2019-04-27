@@ -19,7 +19,7 @@ Vue.use(Vuex){{#if_eq lintConfig "airbnb"}};{{/if_eq}}
 {{/vuex}}
 
 Vue.config.productionTip = false
-import 'src/assets/css/reset.css'
+import './assets/css/reset.css'
 /* eslint-disable no-new */
 new Vue({
   el: '#app',
