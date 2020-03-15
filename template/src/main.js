@@ -16,7 +16,7 @@ import store from './store/store'{{#if_eq lintConfig "airbnb"}};{{/if_eq}}
 import axios from 'axios'
 Object.defineProperty(Vue.prototype, '$axios', {value: axios})
 {{/axios}}
-  
+
 {{#vuex}}
 Vue.use(Vuex){{#if_eq lintConfig "airbnb"}};{{/if_eq}}
 {{/vuex}}
