@@ -1,4 +1,20 @@
-* {margin: 0;padding: 0;box-sizing: border-box;}
+* {margin: 0;padding: 0;box-sizing: border-box;outline: none;}
+html, body {height: 100%;-webkit-tap-highlight-color: rgba(0, 0, 0, 0);}
+body {-webkit-overflow-scrolling: touch;margin-bottom: env(safe-area-inset-bottom);}
 img {border: none;content: normal;}
 a, a:hover {text-decoration: none;cursor: pointer;}
 ul, li, ol {list-style: none;}
+img {width: 100%;display: block;border: none;overflow: hidden;content: normal!important;}
+
+.fl {float: left;}
+.fr {float: right;}
+.por {position: relative;}
+.poa {position: absolute;}
+.pof {position: fixed;}
+.ovh {overflow: hidden;}
+.block {display: block;}
+.iblock {display: inline-block;}
+.flex {display: flex;}
+.center {display: flex;justify-content: center;align-items: center;}
+.hide {opacity: 0;visibility: hidden;overflow: hidden;}
+input, textarea {-webkit-appearance: none;}
