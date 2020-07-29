@@ -1,20 +1,26 @@
-* {margin: 0;padding: 0;box-sizing: border-box;outline: none;}
-html, body {height: 100%;-webkit-tap-highlight-color: rgba(0, 0, 0, 0);}
-body {-webkit-overflow-scrolling: touch;margin-bottom: env(safe-area-inset-bottom);}
-img {border: none;content: normal;}
-a, a:hover {text-decoration: none;cursor: pointer;}
-ul, li, ol {list-style: none;}
-img {width: 100%;display: block;border: none;overflow: hidden;content: normal!important;}
-
-.fl {float: left;}
-.fr {float: right;}
+* {margin: 0;padding: 0;font-size: 16px;box-sizing: border-box;font-weight: normal;outline: none;font-family: Helvetica,"PingFang SC","Hiragino Sans GB","Microsoft YaHei","微软雅黑",Arial,sans-serif;}
+body {color: #666;background: #f6f7f8;}
+iframe {width: 100%;height: 100vh;}
+html,body {height: 100vh;-webkit-tap-highlight-color: rgba(0, 0, 0, 0);}
+a,a:hover {text-decoration: none;cursor: pointer;outline: none;color: #666666;}
+img {width: 100%;display: block;border: none;overflow: hidden;}
+ul,li {list-style: none;}
+input,textarea {border: none;outline: none;}
+input[type='search'] {-webkit-appearance: none;}
+/*输入框默认字体样式颜色*/
+:-moz-placeholder,::-moz-placeholder,input:-ms-input-placeholder,textarea:-ms-input-placeholder,input::-webkit-input-placeholder,textarea::-webkit-input-placeholder {color: rgba(0, 0, 0, 0.5);}
+#app {padding-bottom: env(safe-area-inset-bottom);}
 .por {position: relative;}
 .poa {position: absolute;}
 .pof {position: fixed;}
-.ovh {overflow: hidden;}
-.block {display: block;}
-.iblock {display: inline-block;}
+.clearfix:after{content: '';clear: both;display: block;height: 0;visibility: hidden;font-size: 0;line-height: 0;}
 .flex {display: flex;}
-.center {display: flex;justify-content: center;align-items: center;}
-.hide {opacity: 0;visibility: hidden;overflow: hidden;}
-input, textarea {-webkit-appearance: none;}
+.fl {float: left;}
+.fr {float: right;}
+.ovh {overflow: hidden;}
+.iblock {display: inline-block;}
+.block {display: block;}
+.hide {display: none;}
+.line-one {text-overflow: ellipsis;white-space: nowrap;overflow: hidden;}
+.line-two {overflow: hidden;display: -webkit-box;-webkit-line-clamp: 2;-webkit-box-orient: vertical;}
+.line-three {overflow: hidden;display: -webkit-box;-webkit-line-clamp: 3;-webkit-box-orient: vertical;}
