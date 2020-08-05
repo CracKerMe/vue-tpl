@@ -25,12 +25,12 @@
     "build": "node build/build.js"
   },
   "dependencies": {
-    "vue": "^2.5.2"{{#router}},
-    "vue-router": "^3.0.1"{{/router}}{{#vuex}},
-    "vuex": "^2.1.1"{{/vuex}}{{#sass}},
-    "node-sass": "^4.9.0",
-    "sass-loader": "^7.0.3"{{/sass}}{{#axios}},
-    "axios": "0.18.0"{{/axios}}{{#jsonp}},
+    "vue": "^2.6.11"{{#router}},
+    "vue-router": "^3.4.0"{{/router}}{{#vuex}},
+    "vuex": "^3.5.1"{{/vuex}}{{#sass}},
+    "node-sass": "^4.14.0",
+    "sass-loader": "^9.0.3"{{/sass}}{{#axios}},
+    "axios": "0.19.2"{{/axios}}{{#jsonp}},
     "jsonp": "0.2.1"{{/jsonp}}{{#betterScroll}},
     "better-scroll": "^1.15.2"{{/betterScroll}}{{#if_eq cssWithVW "vw"}},
     "cssnano": "^4.1.9",

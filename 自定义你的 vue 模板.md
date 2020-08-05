@@ -85,3 +85,7 @@ plugins: [
 ]
 ```
 
+
+
+新增安装 filters
+

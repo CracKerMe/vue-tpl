@@ -8,6 +8,9 @@ import App from './App'
 import router from './router'
 {{/router}}
 import './assets/css/reset.css'
+import NProgress from 'nprogress'
+import 'nprogress/nprogress.css'
+import filters from './plugins/filters'
 {{#vuex}}
 import Vuex from 'vuex'{{#if_eq lintConfig "airbnb"}};{{/if_eq}}
 import store from './store/store'{{#if_eq lintConfig "airbnb"}};{{/if_eq}}
@@ -16,11 +19,17 @@ import store from './store/store'{{#if_eq lintConfig "airbnb"}};{{/if_eq}}
 import axios from 'axios'
 Object.defineProperty(Vue.prototype, '$axios', {value: axios})
 {{/axios}}
-
+Vue.use(filters)
+router.beforeEach((to, from, next) => {
+  NProgress.start()
+  next()
+})
+router.afterEach(transition => {
+  NProgress.done()
+})
 {{#vuex}}
 Vue.use(Vuex){{#if_eq lintConfig "airbnb"}};{{/if_eq}}
 {{/vuex}}
-
 Vue.config.productionTip = false
 /* eslint-disable no-new */
 new Vue({
