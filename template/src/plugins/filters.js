@@ -4,6 +4,7 @@
  * 使用方法：
  * 1、最标准的vue的过滤器的使用方法。
  * 2、示例：{{item.timestamp | f_moment}}
+ * 描述 end
  */
 function padLeft10 (str) {
   return String(str).padStart(2, '0')
