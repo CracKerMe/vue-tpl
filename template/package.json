@@ -29,7 +29,8 @@
     "vue-router": "^3.0.1"{{/router}}{{#vuex}},
     "vuex": "^2.1.1"{{/vuex}}{{#sass}},
     "node-sass": "^4.9.0",
-    "sass-loader": "^7.0.3"{{/sass}}{{#axios}},
+    "sass-loader": "^7.0.3",{{/sass}}
+    "nprogress": "^0.2.0",{{#axios}},
     "axios": "0.18.0"{{/axios}}{{#jsonp}},
     "jsonp": "0.2.1"{{/jsonp}}{{#betterScroll}},
     "better-scroll": "^1.15.2"{{/betterScroll}}{{#if_eq cssWithVW "vw"}},
