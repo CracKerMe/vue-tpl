@@ -72,7 +72,7 @@ module.exports = {
     cssWithVW: {
       when: 'isNotTest',
       type: 'list',
-      message: 'use vw/vh instead rem on mobile mode',
+      message: '使用 vw/vh 适配移动端',
       choices: [
         {
           name: 'Yes vw is best',
@@ -81,7 +81,7 @@ module.exports = {
         },
         {
           name:
-            'no i use rem for fucking low devices',
+            'No 我不兼容 vw/vh',
           value: 'no',
           short: 'no'
         }
@@ -90,15 +90,15 @@ module.exports = {
     router: {
       when: 'isNotTest',
       type: 'confirm',
-      message: 'Install vue-router?'
+      message: '安装 vue-router?'
     },
     sass: {
       type: 'confirm',
-      message: 'Install sass?'
+      message: '安装 sass?'
     },
     less: {
       type: 'confirm',
-      message: 'Install less?'
+      message: '安装 less?'
     },
     axios: {
       type: 'confirm',
@@ -110,17 +110,17 @@ module.exports = {
     },
     vuex: {
       type: 'confirm',
-      message: 'Install vuex?'
+      message: '安装 vuex?'
     },
     lint: {
       when: 'isNotTest',
       type: 'confirm',
-      message: 'Use ESLint to lint your code?'
+      message: '使用 ESLint 规范代码?'
     },
     lintConfig: {
       when: 'isNotTest && lint',
       type: 'list',
-      message: 'Pick an ESLint preset',
+      message: '选择 ESLint 预设',
       choices: [
         {
           name: 'Standard (https://github.com/standard/standard)',
@@ -186,6 +186,11 @@ module.exports = {
           name: 'Yes, use Yarn',
           value: 'yarn',
           short: 'yarn'
+        },
+        {
+          name: 'Yes, use CNPM',
+          value: 'cnpm',
+          short: 'cnpm'
         },
         {
           name: 'No, I will handle that myself',

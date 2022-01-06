@@ -332,7 +332,7 @@ export default {
 }
 </script>
 
-<style lang="scss">
+<style lang="{{#sass}}scss{{else}}less{{/sass}}">
 .list-wrapper {
   position: relative;
   height: 100%;
