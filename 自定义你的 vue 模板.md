@@ -24,15 +24,15 @@
 
 5. 安装sass(可选)
 
-6. 安装better-scroll(可选)
-   
+5. 安装less(可选 建议使用less) 
+
+7. 安装better-scroll(可选)
+
     提供 `scroll` 和 `slider` 模板直接上手使用,请期待readme 的 使用说明以及更新
 
-7. 安装axios(可选)
+8. 安装axios(可选)
 
-8. 安装jsonp(可选)
-
-
+9. ~~安装jsonp(可选)~~
 
 ## 推荐 vue 插件安装
 
