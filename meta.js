@@ -96,6 +96,10 @@ module.exports = {
       type: 'confirm',
       message: 'Install sass?'
     },
+    less: {
+      type: 'confirm',
+      message: 'Install less?'
+    },
     axios: {
       type: 'confirm',
       message: 'need axios?'
@@ -103,10 +107,6 @@ module.exports = {
     betterScroll: {
       type: 'confirm',
       message: 'need use betterScroll?'
-    },
-    jsonp: {
-      type: 'confirm',
-      message: 'need jsonp?'
     },
     vuex: {
       type: 'confirm',

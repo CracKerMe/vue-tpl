@@ -13,7 +13,7 @@ import 'nprogress/nprogress.css'
 import filters from './plugins/filters'
 {{#vuex}}
 import Vuex from 'vuex'{{#if_eq lintConfig "airbnb"}};{{/if_eq}}
-import store from './store/store'{{#if_eq lintConfig "airbnb"}};{{/if_eq}}
+import store from './store'{{#if_eq lintConfig "airbnb"}};{{/if_eq}}
 {{/vuex}}
 {{#axios}}
 import axios from 'axios'

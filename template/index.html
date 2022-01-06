@@ -4,18 +4,18 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,minimum-scale=1,user-scalable=no">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge,chrome=1" />
   <title>{{ name }}</title>
   <meta name="renderer" content="webkit">
+  <meta name="force-rendering" content="webkit">
   <meta name="wap-font-scale" content="no">
   <meta name="apple-touch-fullscreen" content="yes">
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="applicable-device" content="mobile">
   <meta name="apple-mobile-web-app-status-bar-style" content="black">
   <meta name="mobile-web-app-capable" content="yes">
-  <meta name="applicable-device" content="mobile">
-  <meta http-equiv="Cache-Control" content="no-transform">
-  <meta http-equiv="Cache-Control" content="no-siteapp">
+  <meta name="apple-mobile-web-app-title" content="{{ name }}">
+  <meta name="applicable-device" content="pc">
   {{#if_eq cssWithVW "vw"}}
   <script src="//g.alicdn.com/fdilab/lib3rd/viewport-units-buggyfill/0.6.2/??viewport-units-buggyfill.hacks.min.js,viewport-units-buggyfill.min.js"></script>
   <script>
@@ -26,6 +26,7 @@
     }
   </script>
   {{/if_eq}}
+  <script src="//polyfill.io/v3/polyfill.min.js"></script>
 </head>
 
 <body>
