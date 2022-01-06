@@ -27,9 +27,11 @@
   "dependencies": {
     "vue": "^2.6.14"{{#router}},
     "vue-router": "^3.5.3"{{/router}}{{#vuex}},
-    "vuex": "^3.6.3"{{/vuex}}{{#sass}},
+    "vuex": "^3.6.3",{{/vuex}}{{#sass}}
     "node-sass": "^4.9.0",
-    "sass-loader": "^7.0.3",{{/sass}}
+    "sass-loader": "^7.0.3",{{/sass}}{{#less}}
+    "less": "^3.13.1",
+    "less-loader": "^5.0.0",{{/less}}
     "nprogress": "^0.2.0"{{#axios}},
     "axios": "0.18.0"{{/axios}}{{#betterScroll}},
     "better-scroll": "^1.15.2"{{/betterScroll}}{{#if_eq cssWithVW "vw"}},
@@ -38,12 +40,7 @@
     "postcss-cssnext": "^3.1.0",
     "postcss-px-to-viewport": "^1.0.0",
     "postcss-viewport-units": "^0.1.6",
-    "postcss-write-svg": "^3.0.1",
-    {{/if_eq}}
-    {{#less}},
-    "less": "^3.13.1",
-    "less-loader": "^5.0.0",
-    {{/less}}
+    "postcss-write-svg": "^3.0.1"{{/if_eq}}
   },
   "devDependencies": {
     {{#lint}}
